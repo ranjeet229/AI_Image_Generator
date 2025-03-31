@@ -210,6 +210,7 @@ body {
 .prompt-actions .generate-btn {
     display: flex;
     gap: 12px;
+    margin-left: auto;
     font-weight: 500;
     align-items: center;
     justify-content: center;
@@ -222,4 +223,68 @@ body {
 .prompt-actions .generate-btn:hover {
     transform: translateY(-2px);
     box-shadow: 0 4px 10px rgba(109, 40, 217, 0.3);
+}
+
+.main-content .gallery-grid {
+    display: grid;
+    gap: 15px;
+    margin-top: 30px;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+}
+
+.gallery-grid .img-card {
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 1;
+    border-radius: 16px;
+    background: var(--color-input);
+    border: 1px solid var(--color-border);
+    transition: all 0.5s ease;
+}
+
+.gallery-grid .img-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.gallery-grid .img-card .result-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.gallery-grid .img-card .image-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 20px;
+    display: flex;
+    opacity: 0;
+    pointer-events: none;
+    justify-content: flex-end;
+    background: linear-gradient(transparent, rgba(0,0,0,0.8));
+    transition: all 0.3 ease;
+}
+
+.gallery-grid .img-card:hover .image-overlay {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.gallery-grid .img-card .img-download-btn {
+    height: 45px;
+    width: 45px;
+    color: #fff;
+    backdrop-filter: blur(5px);
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    background: rgba(255,255,255,0.25);
+    transition: all 0.3 ease;
+}
+
+.gallery-grid .img-card .img-download-btn:hover {
+    transform: scale(1.05);
+    background: rgba(255,255,255,0.4);
 }
