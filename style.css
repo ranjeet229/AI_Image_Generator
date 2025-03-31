@@ -236,6 +236,11 @@ body.dark-theme .container {
     background: var(--color-gradient);
 }
 
+.prompt-actions .generate-btn:disabled {
+    opacity: 0.6;
+    pointer-events: none;
+}
+
 .prompt-actions .generate-btn:hover {
     transform: translateY(-2px);
     box-shadow: 0 4px 10px rgba(109, 40, 217, 0.3);
@@ -303,6 +308,9 @@ body.dark-theme .container {
     height: 45px;
     width: 45px;
     color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     backdrop-filter: blur(5px);
     border-radius: 50%;
     border: none;
@@ -357,4 +365,32 @@ body.dark-theme .container {
     font-size: 0.85rem;
     text-align: center;
     color: var(--color-placeholder);
+}
+
+/* Responsive media query code for small screens */
+@media (max-width: 768){
+    .container{
+        padding: 18px;
+    }
+    .header .logo-wrapper .logo {
+        height: 50px;
+        width: 51px;
+        font-size: 1.25rem;
+    }
+
+    .header .logo-wrapper h1 {
+        font-size: 1.7rem;
+    }
+
+    .main-content .prompt-actions {
+        grid-template-columns: 1fr;
+        margin-top: -10px;
+    }
+    .prompt-actions .generate-btn {
+        margin: 10px 0 0;
+    }
+
+    .gallery-grid .img-card .img-overlay {
+        opacity: 1;
+    }
 }
