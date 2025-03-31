@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"/>
     <link rel="stylesheet" href="style.css"/>
 </head>
-<body>
+<body >
     <div class="container">
         <!-- Header -->
         <header class="header">
@@ -36,7 +36,7 @@
                 <!-- Prompt Actions/Buttons -->
                 <div class="prompt-actions">
                     <div class="select-wrapper">
-                        <select class="custom-select" required>
+                        <select class="custom-select" id="model-select" required>
                             <option value="" selected disabled>Select Model</option>
                             <option value="black-forest-labs/FLUX.1-dev">FLUX.1-dev</option>
                             <option value="black-forest-labs/FLUX.1-schnell">FLUX.1-schnell</option>
@@ -47,7 +47,7 @@
                     </div>
 
                     <div class="select-wrapper">
-                        <select class="custom-select" required>
+                        <select class="custom-select" id="count-select" required>
                             <option value="" selected disabled>Image count</option>
                             <option value="1">1 Images</option>
                             <option value="2">2 Images</option>
@@ -57,7 +57,7 @@
                     </div>
 
                     <div class="select-wrapper">
-                        <select class="custom-select" required>
+                        <select class="custom-select" id="ratio-select" required>
                             <option value="" selected disabled>Aspect Ratio</option>
                             <option value="1/1">Square (1:1)</option>
                             <option value="16/9">Landscape (16:9)</option>
@@ -73,41 +73,24 @@
 
                 <!-- Result gallery-grid -->
                 <div class="gallery-grid">
-                    <div class="img-card">
-                        <img src="test.png" class="result-img">
+                    <!-- <div class="img-card loading">
+                        <div class="status-container">
+                            <div class="spinner"></div>
+                            <i class="fa-solid fa-triangle-exclamation"></i>
+                            <p class="status-text">Generating...</p>
+                        </div>
+                        <img src="test.png" class="result-img"/>
                         <div class="image-overlay">
                             <button class="img-download-btn">
                                 <i class="fa-solid fa-download"></i>
                             </button>
                         </div>
-                    </div>
-                    <div class="img-card">
-                        <img src="test.png" class="result-img">
-                        <div class="image-overlay">
-                            <button class="img-download-btn">
-                                <i class="fa-solid fa-download"></i>
-                            </button>
-                        </div>
-                    </div>
-                    <div class="img-card">
-                        <img src="test.png" class="result-img">
-                        <div class="image-overlay">
-                            <button class="img-download-btn">
-                                <i class="fa-solid fa-download"></i>
-                            </button>
-                        </div>
-                    </div>
-                    <div class="img-card">
-                        <img src="test.png" class="result-img">
-                        <div class="image-overlay">
-                            <button class="img-download-btn">
-                                <i class="fa-solid fa-download"></i>
-                            </button>
-                        </div>
-                    </div>
+                    </div> -->
                 </div>
             </form>
         </div>
     </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
