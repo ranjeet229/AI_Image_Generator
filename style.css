@@ -1,0 +1,110 @@
+/* google fonts  */
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Inter", sans-serif;
+}
+
+:root {
+    --color-primary: #5C56E1;
+    --color-primary-dark: #5b21b6;
+    --color-accent: #8B5CF6;
+    --color-card: #FFFFFF;
+    --color-input: #F1F1FF;
+    --color-text: #09090E;
+    --color-placeholder: #5C5A87;
+    --color-border: #D4D4ED;
+    --color-gradient: linear-gradient(135deg, #5C56E1, #8B5CF6);
+  }
+
+
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 15px;
+    color: var(--color-text);
+    background: linear-gradient(#E9E9FF, #C8C7FF);
+}
+.container {
+    width: 900px;
+    padding: 32px;
+    position: relative;
+    border-radius: 23px;
+    overflow: hidden;
+    background: var(--color-card);
+    box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.1);
+}
+
+.container::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: var(--color-gradient);
+}
+.header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.header .logo-wrapper {
+    display: flex;
+    gap: 18px;
+    align-items: center;
+}
+
+.header .logo-wrapper .logo {
+    height: 55px;
+    width: 56px;
+    display: flex;
+    color: #fff;
+    font-size: 1.35rem;
+    flex-shrink: 0;
+    border-radius: 15px;
+    align-items: center;
+    justify-content: center;
+    background: var(--color-gradient);
+}
+
+.header .logo-wrapper h1 {
+    font-size: 1.9rem;
+    font-weight: 700;
+}
+
+.header .theme-toggle {
+    height: 43px;
+    width: 43px;
+    border-radius: 50%;
+    font-size: 1.05rem;
+    flex-shrink: 0;
+    cursor: pointer;
+    display: flex;
+    color: var(--color-placeholder);
+    align-items: center;
+    justify-content: center;
+    background: var(--color-input);
+    border: 1px solid var(--color-border);
+    transition: all 0.3s ease;
+}
+
+.header .theme-toggle:hover {
+    color: var(--color-primary);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.main-content {
+    margin: 35px 0 5px;
+}
+
+.main-content .prompt-container {
+    width: 100%;
+    margin-bottom: 20px;
+}
