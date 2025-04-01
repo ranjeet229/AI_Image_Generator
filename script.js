@@ -11,50 +11,36 @@ const gridGallery = document.querySelector(".gallery-grid");
 
 const API_KEY ="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";//hugging face api key
 
-//prevent From right click
-document.oncontextmenu =() =>{
+// Prevent Right Click
+document.oncontextmenu = (e) => {
     alert("Don't try right click");
     e.preventDefault();
     return false;
-}
+};
 
-//still using anyone can inspect elements by F12....>>>
-document.onkeydown = e => {
-    // Prevent F12
-    if (e.key === "F12") {
-        alert("Don't try to inspect element");
-        e.preventDefault();
-        return false;
-    }
-
-    // Prevent Ctrl + Shift + I
-    if (e.ctrlKey && e.shiftKey && e.key.toLowerCase() === "i") {
-        alert("Don't try to inspect!");
-        e.preventDefault();
-        return false;
-    }
-
-    // Prevent Ctrl + U (View Source)
-    if (e.ctrlKey && e.key.toLowerCase() === "u") {
-        alert("Don't try to view page source");
-        e.preventDefault();
-        return false;
-    }
-
-    // Prevent Ctrl + C (Copy)
-    if (e.ctrlKey && e.key.toLowerCase() === "c") {
-        alert("Don't try to copy page element");
-        e.preventDefault();
-        return false;
-    }
-
-    // Prevent Ctrl + V (Paste)
-    if (e.ctrlKey && e.key.toLowerCase() === "v") {
-        alert("Don't try to paste page element");
+// Prevent Inspect Element and Other Shortcuts
+document.onkeydown = (e) => {
+    if (
+        e.key === "F12" || 
+        (e.ctrlKey && e.shiftKey && e.key.toLowerCase() === "i") || 
+        (e.ctrlKey && e.key.toLowerCase() === "u") || 
+        (e.ctrlKey && e.key.toLowerCase() === "c") || 
+        (e.ctrlKey && e.key.toLowerCase() === "v")
+    ) {
+        alert("Action Blocked!");
         e.preventDefault();
         return false;
     }
 };
+
+// Additional Protection - Prevent DevTools
+setInterval(() => {
+    if (window.outerHeight - window.innerHeight > 200 || window.outerWidth - window.innerWidth > 200) {
+        alert("Developer tools detected! Closing the page.");
+        window.close();
+    }
+}, 1000);
+
 
 const examplePrompts = [
     "A magic forest with glowing plants and fairy homes among giant mushrooms",
