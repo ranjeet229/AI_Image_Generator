@@ -14,6 +14,7 @@ const API_KEY ="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";//hugging face api key
 //prevent From right click
 document.oncontextmenu =() =>{
     alert("Don't try right click");
+    e.preventDefault();
     return false;
 }
 
