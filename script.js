@@ -13,6 +13,7 @@ const API_KEY ="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";//hugging face api key
 
 // Prevent Right Click
 document.oncontextmenu = (e) => {
+    alert("Action Blocked!");
     e.preventDefault();
     return false;
 };
