@@ -19,31 +19,42 @@ document.oncontextmenu =() =>{
 
 //still using anyone can inspect elements by F12....>>>
 document.onkeydown = e => {
-    if(e.key == "F12" || e.key == "ctrl+shift+i"){
+    // Prevent F12
+    if (e.key === "F12") {
         alert("Don't try to inspect element");
+        e.preventDefault();
         return false;
     }
-    //prevent showing page source by crtrl + u
-    if(e.ctrlKey && e.key == "u"){
-        alert("Don't try to view page source");
-        return false;
-    }
-    //prevent copying anything from the page
-    if(e.ctrlKey && e.key == "c"){
-        alert("Don't try to copy page element");
-        return false;
-    }
-    //prevent paste anything from other sources
-    if(e.ctrlKey && e.key == "v"){
-        alert("Don't try to paste page element");
-        return false;
-    }
+
+    // Prevent Ctrl + Shift + I
     if (e.ctrlKey && e.shiftKey && e.key.toLowerCase() === "i") {
         alert("Don't try to inspect!");
         e.preventDefault();
         return false;
     }
-}
+
+    // Prevent Ctrl + U (View Source)
+    if (e.ctrlKey && e.key.toLowerCase() === "u") {
+        alert("Don't try to view page source");
+        e.preventDefault();
+        return false;
+    }
+
+    // Prevent Ctrl + C (Copy)
+    if (e.ctrlKey && e.key.toLowerCase() === "c") {
+        alert("Don't try to copy page element");
+        e.preventDefault();
+        return false;
+    }
+
+    // Prevent Ctrl + V (Paste)
+    if (e.ctrlKey && e.key.toLowerCase() === "v") {
+        alert("Don't try to paste page element");
+        e.preventDefault();
+        return false;
+    }
+};
+
 const examplePrompts = [
     "A magic forest with glowing plants and fairy homes among giant mushrooms",
     "An old steampunk airship floating through golden clouds at sunset",
