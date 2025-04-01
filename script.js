@@ -11,7 +11,39 @@ const gridGallery = document.querySelector(".gallery-grid");
 
 const API_KEY ="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";//hugging face api key
 
+//prevent From right click
+document.oncontextmenu =() =>{
+    alert("Don't try right click");
+    return false;
+}
 
+//still using anyone can inspect elements by F12....>>>
+document.onkeydown = e => {
+    if(e.key == "F12" || e.key == "ctrl+shift+i"){
+        alert("Don't try to inspect element");
+        return false;
+    }
+    //prevent showing page source by crtrl + u
+    if(e.ctrlKey && e.key == "u"){
+        alert("Don't try to view page source");
+        return false;
+    }
+    //prevent copying anything from the page
+    if(e.ctrlKey && e.key == "c"){
+        alert("Don't try to copy page element");
+        return false;
+    }
+    //prevent paste anything from other sources
+    if(e.ctrlKey && e.key == "v"){
+        alert("Don't try to paste page element");
+        return false;
+    }
+    if (e.ctrlKey && e.shiftKey && e.key.toLowerCase() === "i") {
+        alert("Don't try to inspect!");
+        e.preventDefault();
+        return false;
+    }
+}
 const examplePrompts = [
     "A magic forest with glowing plants and fairy homes among giant mushrooms",
     "An old steampunk airship floating through golden clouds at sunset",
