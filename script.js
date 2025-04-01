@@ -13,7 +13,6 @@ const API_KEY ="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";//hugging face api key
 
 // Prevent Right Click
 document.oncontextmenu = (e) => {
-    alert("Don't try right click");
     e.preventDefault();
     return false;
 };
@@ -21,10 +20,10 @@ document.oncontextmenu = (e) => {
 // Prevent Inspect Element and Other Shortcuts
 document.onkeydown = (e) => {
     if (
-        e.key === "F12" || 
-        (e.ctrlKey && e.shiftKey && e.key.toLowerCase() === "i") || 
-        (e.ctrlKey && e.key.toLowerCase() === "u") || 
-        (e.ctrlKey && e.key.toLowerCase() === "c") || 
+        e.key === "F12" ||
+        (e.ctrlKey && e.shiftKey && e.key.toLowerCase() === "i") ||
+        (e.ctrlKey && e.key.toLowerCase() === "u") ||
+        (e.ctrlKey && e.key.toLowerCase() === "c") ||
         (e.ctrlKey && e.key.toLowerCase() === "v")
     ) {
         alert("Action Blocked!");
