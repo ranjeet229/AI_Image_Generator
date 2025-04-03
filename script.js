@@ -24,8 +24,7 @@ document.onkeydown = (e) => {
         e.key === "F12" ||
         (e.ctrlKey && e.shiftKey && e.key.toLowerCase() === "i") ||
         (e.ctrlKey && e.key.toLowerCase() === "u") ||
-        (e.ctrlKey && e.key.toLowerCase() === "c") ||
-        (e.ctrlKey && e.key.toLowerCase() === "v")
+        (e.ctrlKey && e.key.toLowerCase() === "c")
     ) {
         alert("Action Blocked!");
         e.preventDefault();
