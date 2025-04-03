@@ -9,7 +9,7 @@ const countSelect = document.getElementById("count-select");
 const ratioSelect = document.getElementById("ratio-select");
 const gridGallery = document.querySelector(".gallery-grid");
 
-const API_KEY ="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";//hugging face api key
+const API_KEY ="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";//hugging face api key
 
 // Prevent Right Click
 document.oncontextmenu = (e) => {
